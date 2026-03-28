@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Politique de confidentialité - BarberShop</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header class="header header-inner">
-        <nav class="nav">
+        <nav class="nav" aria-label="Navigation principale">
             <div class="logo">
                 <a href="index.html" class="logo-link" aria-label="BarberShop - Accueil">
                     <img src="images/logo.png" alt="Logo">
                 </a>
             </div>
-            <div class="menu">
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Ouvrir le menu">
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+                <span class="nav-toggle-bar" aria-hidden="true"></span>
+            </button>
+            <div class="menu" id="main-menu">
                 <a href="index.html#accueil">Accueil</a>
                 <a href="index.html#services">Services</a>
                 <a href="index.html#rendez-vous">Rendez-vous</a>

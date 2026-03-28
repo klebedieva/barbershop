@@ -1,4 +1,58 @@
-// Client-side validation and confirmation modal for booking and contact forms.
+// Mobile navigation (all pages)
+(function () {
+    const nav = document.querySelector('.nav');
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('main-menu');
+
+    if (!nav || !toggle || !menu) {
+        return;
+    }
+
+    const mq = window.matchMedia('(max-width: 768px)');
+
+    function closeMenu() {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Ouvrir le menu');
+    }
+
+    function openMenu() {
+        nav.classList.add('is-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.setAttribute('aria-label', 'Fermer le menu');
+    }
+
+    toggle.addEventListener('click', function () {
+        if (nav.classList.contains('is-open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+            if (mq.matches) {
+                closeMenu();
+            }
+        });
+    });
+
+    mq.addEventListener('change', function (e) {
+        if (!e.matches) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+            closeMenu();
+            toggle.focus();
+        }
+    });
+})();
+
+// Client-side validation and confirmation modal for booking and contact forms (index only)
 (function () {
     const modal = document.getElementById('confirm-modal');
     const titleEl = document.getElementById('modal-title');
