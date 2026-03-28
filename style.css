@@ -41,10 +41,12 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
 }
 
 .nav {
     position: relative;
+    z-index: 10;
     max-width: 1440px;
     margin: 0 auto;
     padding: 20px 56px 20px 20px;
@@ -96,7 +98,6 @@ body {
     border-radius: 8px;
     background: rgba(0, 0, 0, 0.35);
     cursor: pointer;
-    z-index: 2;
     transition: background-color 0.2s, border-color 0.2s;
 }
 
@@ -162,6 +163,7 @@ body {
     text-align: center;
     width: 100%;
     padding: 0 20px;
+    z-index: 1;
 }
 
 .banner h1 {
@@ -315,6 +317,20 @@ body {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 16px;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+}
+
+/* date/time : même largeur que tel / select (navigateurs mobiles = largeur intrinsèque par défaut) */
+.form-row input[type="date"],
+.form-row input[type="time"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .form-row input:focus,
@@ -646,6 +662,9 @@ body {
 
     .nav.is-open .menu {
         display: flex;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
     }
 
     .menu a {
