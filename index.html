@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberShop - Salon de Coiffure</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header id="accueil" class="header">
+        <nav class="nav">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="BarberShop - Accueil">
+                    <img src="images/logo.png" alt="Logo">
+                </a>
+            </div>
+            
+            <div class="menu">
+                <a href="index.html#accueil">Accueil</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#rendez-vous">Rendez-vous</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </nav>
+        
+        <div class="banner">
+            <h1>Bienvenue chez BarberShop</h1>
+            <p>Spécialiste de la coiffure et de la barbe pour hommes</p>
+            <a href="#rendez-vous" class="btn">Prendre Rendez-vous</a>
+        </div>
+    </header>
+
+    <!-- Services -->
+    <section id="services" class="services">
+        <h2>Nos Services</h2>
+        
+        <div class="services-container">
+            <div class="service-box">
+                <img src="images/service1.jpg" alt="Coupe Classique">
+                <div class="service-content">
+                    <h3>Coupe Classique</h3>
+                    <p>Coupe de cheveux professionnelle adaptée à votre style</p>
+                    <span class="price">À partir de 25€</span>
+                    <a href="#rendez-vous" class="btn">Réserver</a>
+                </div>
+            </div>
+            <div class="service-box">
+                <img src="images/service2.jpg" alt="Taille de Barbe">
+                <div class="service-content">
+                    <h3>Taille de Barbe</h3>
+                    <p>Taille et entretien de barbe avec des techniques traditionnelles</p>
+                    <span class="price">À partir de 15€</span>
+                    <a href="#rendez-vous" class="btn">Réserver</a>
+                </div>
+            </div>
+            <div class="service-box">
+                <img src="images/service3.jpg" alt="Combo Coupe + Barbe">
+                <div class="service-content">
+                    <h3>Combo Coupe + Barbe</h3>
+                    <p>Service complet pour un style parfait et une refonte complète</p>
+                    <span class="price">À partir de 35€</span>
+                    <a href="#rendez-vous" class="btn">Réserver</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="rendez-vous" class="booking">
+        <h2>Prendre Rendez-vous</h2>
+        
+        <form id="booking-form" class="form" novalidate>
+            <p class="form-error" id="booking-form-error" hidden role="alert"></p>
+            <div class="form-row">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" maxlength="50" autocomplete="name">
+            </div>
+
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email">
+            </div>
+
+            <div class="form-row">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+
+            <div class="form-row">
+                <label for="service">Service</label>
+                <select id="service" name="service">
+                    <option value="">Sélectionnez un service</option>
+                    <option value="coupe">Coupe Classique</option>
+                    <option value="barbe">Taille de Barbe</option>
+                    <option value="combo">Combo Coupe + Barbe</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date">
+            </div>
+
+            <div class="form-row">
+                <label for="time">Heure</label>
+                <input type="time" id="time" name="time">
+            </div>
+
+            <button type="submit" class="btn">Confirmer le rendez-vous</button>
+        </form>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <div class="contact-container">
+            <div class="info-box">
+                <h3>Informations de Contact</h3>
+                <div class="info-item">
+                    <img src="images/address-icon.png" alt="Adresse" class="info-icon">
+                    <div>
+                        <strong>Adresse</strong>
+                        <p>Av. Gustave Eiffel, 75007 Paris</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <img src="images/telephone-icon.png" alt="" class="info-icon" aria-hidden="true">
+                    <div>
+                        <strong>Téléphone</strong>
+                        <p><a href="tel:+33781234567">07 81 23 45 67</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <img src="images/email-icon.png" alt="" class="info-icon" aria-hidden="true">
+                    <div>
+                        <strong>Email</strong>
+                        <p><a href="mailto:contact@barbershop.fr">contact@barbershop.fr</a></p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <img src="images/clock-icon.png" alt="Horaires" class="info-icon">
+                    <div>
+                        <strong>Horaires d'ouverture</strong>
+                        <p>Lundi - Samedi: 9h00 - 19h00</p>
+                        <p>Dimanche: Fermé</p>
+                    </div>
+                </div>
+            </div>
+            <div class="message-box">
+                <h3>Envoyez-nous un Message</h3>
+        
+                <form id="contact-form" class="form" novalidate>
+                    <p class="form-error" id="contact-form-error" hidden role="alert"></p>
+                    <div class="form-row">
+                        <label for="contact-name">Votre Nom</label>
+                        <input type="text" id="contact-name" name="contact-name" maxlength="50" autocomplete="name">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="contact-email">Votre Email</label>
+                        <input type="email" id="contact-email" name="contact-email" autocomplete="email">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" maxlength="100">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="4" maxlength="500"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn">Envoyer le Message</button>
+                </form>
+            </div>
+        </div>
+        <div class="map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937604!2d2.292292615509614!3d48.85836857928678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1647891723575!5m2!1sfr!2sfr"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.facebook.com/" class="social-icon">
+                    <img src="images/facebook-icon.png" alt="Facebook">
+                </a>
+                <a href="https://x.com/" class="social-icon">
+                    <img src="images/x-icon.png" alt="Twitter">
+                </a>
+                <a href="https://www.instagram.com/" class="social-icon">
+                    <img src="images/insta-icon.png" alt="Instagram">
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="mentions-legales.html">Mentions légales</a>
+                <a href="politique-confidentialite.html">Politique de confidentialité</a>
+            </div>
+            <p class="copyright">© 2025 BarberShop. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Confirmation modal -->
+    <div id="confirm-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-box">
+            <h3 id="modal-title">Confirmation</h3>
+            <p id="modal-message"></p>
+            <button type="button" class="btn modal-close" id="modal-close-btn">OK</button>
+        </div>
+    </div>
+</body>
+</html>
